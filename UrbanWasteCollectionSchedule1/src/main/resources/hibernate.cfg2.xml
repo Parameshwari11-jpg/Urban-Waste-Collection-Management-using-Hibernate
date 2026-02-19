@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Hibernate 6 Oracle Dialect -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.OracleDialect
+        </property>
+
+        <property name="hibernate.connection.driver_class">
+            oracle.jdbc.OracleDriver
+        </property>
+
+        <property name="hibernate.connection.url">
+            jdbc:oracle:thin:@localhost:1521:xe
+        </property>
+
+        <property name="hibernate.connection.username">
+            waste_user
+        </property>
+
+        <property name="hibernate.connection.password">
+            waste_pwd
+        </property>
+
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping class="com.waste.bean.Citizen"/>
+        <mapping class="com.waste.bean.WasteServiceRow"/>
+
+    </session-factory>
+</hibernate-configuration>
